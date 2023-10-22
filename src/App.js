@@ -1,9 +1,9 @@
 import './App.css';
-
+import Body from './Components/Body';
 function App() {
   return (
-    <div className="text-3xl font-bold text-green-800">
-      Welcome to Netflix GTP App
+    <div>
+      <Body/>
     </div>
   );
 }
