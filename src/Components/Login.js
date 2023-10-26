@@ -1,5 +1,4 @@
 import React, { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import BackGroundImage from "../Utils/Images/background.jpg";
 import { checkValidateData } from "../Utils/Validate";
@@ -16,7 +15,6 @@ const Login = (e) => {
   const name=useRef(null)
   const email = useRef(null);
   const password = useRef(null);
-  const navigate = useNavigate();
   const toggleSignInForm = () => {
     setSignInForm(!isSignInForm);
   };
@@ -43,8 +41,6 @@ const Login = (e) => {
           })
             .then(() => {})
             .catch((error) => {});
-
-          navigate("/browser");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -59,7 +55,6 @@ const Login = (e) => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browser");
         })
         .catch((error) => {
           const errorCode = error.code;
